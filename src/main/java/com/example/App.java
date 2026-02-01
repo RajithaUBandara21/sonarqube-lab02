@@ -1,15 +1,21 @@
-package main.java.com.example;
+package com.example;
+
+import java.sql.SQLException;
+import java.util.logging.Logger;
 
 public class App {
 
-    public static void main(String[] args) throws Exception {
+   private static final Logger logger = Logger.getLogger(App.class.getName());
 
-        Calculator calc = new Calculator();
+   public static void main(String[] args) throws SQLException {
+Calculator calc = new Calculator();
+if (logger.isLoggable(java.util.logging.Level.INFO)) {
+    logger.info(String.valueOf(calc.calculate(10, 5, "add-again")));
+}
+UserService service = new UserService();
+service.findUser("admin");
+service.deleteUser("admin"); // NEW dangerous call
+}
 
-        System.out.println(calc.calculate(10, 5, "add"));
-
-        UserService service = new UserService();
-        service.findUser("admin");
-    }
 }
 
