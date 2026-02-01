@@ -41,6 +41,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           mvn sonar:sonar \
-            -Dsonar.projectKey=YOUR_PROJECT_KEY \
-            -Dsonar.organization=YOUR_ORG_KEY \
+            -Dsonar.projectKey=bandarakgru214030k_lab02 \
+            -Dsonar.organization=bandarakgru214030k \
             -Dsonar.host.url=https://sonarcloud.io
